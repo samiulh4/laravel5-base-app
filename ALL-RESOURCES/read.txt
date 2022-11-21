@@ -1,0 +1,62 @@
+composer create-project --prefer-dist laravel/laravel laravel5-bat-app "5.5.*"
+
+php artisan make:auth
+
+composer require artem-schander/l5-modular "^1.4.1"
+ArtemSchander\L5Modular\ModuleServiceProvider::class,
+php artisan make:module module_name --no-migration --no-translation
+
+
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3307
+DB_DATABASE=laravel5_bat_app
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+php artisan make:seeder UsersTableSeeder
+
+
+php artisan db:seed
+
+php artisan migrate:refresh --seed
+php artisan vendor:publish
+
+## Install Yajra Datatable
+composer require yajra/laravel-datatables-oracle "^8.0"
+'providers' => [
+	 Yajra\Datatables\DatatablesServiceProvider::class,
+],
+'aliases' => [
+	'Datatables' => 'Yajra\Datatables\Facades\Datatables',
+]
+php artisan vendor:publish --tag=datatables
+
+## Laravel Debugbar Configaration
+composer require barryvdh/laravel-debugbar --dev
+'providers' => [
+	Barryvdh\Debugbar\ServiceProvider::class,
+],
+'aliases' => [
+	'Debugbar' => Barryvdh\Debugbar\Facade::class,
+]
+php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
+
+# Laravel Collective
+https://laravelcollective.com/docs/5.5/html
+composer require "laravelcollective/html":"^5.4.0"
+'providers' => [
+
+    Collective\Html\HtmlServiceProvider::class,
+    
+  ],
+
+  'aliases' => [
+
+      'Form' => Collective\Html\FormFacade::class,
+      'Html' => Collective\Html\HtmlFacade::class,
+    
+  ],
+
+
