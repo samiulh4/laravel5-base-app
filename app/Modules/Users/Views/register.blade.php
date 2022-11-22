@@ -28,39 +28,118 @@
                             <div class="card-body">
                                 <nav>
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <button class="nav-link active" id="nav-basic-information-tab" data-bs-toggle="tab" data-bs-target="#nav-basic-information" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Basic Information</button>
-                                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
-                                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
-                                        <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button>
+                                        <button class="nav-link active" id="nav-basic-tab" data-bs-toggle="tab" data-bs-target="#nav-basic" type="button" role="tab" aria-controls="nav-basic" aria-selected="true">Basic Information</button>
+                                        <button class="nav-link" id="nav-address-tab" data-bs-toggle="tab" data-bs-target="#nav-address" type="button" role="tab" aria-controls="nav-address" aria-selected="false">Address</button>
+                                        <button class="nav-link" id="nav-upload-tab" data-bs-toggle="tab" data-bs-target="#nav-upload" type="button" role="tab" aria-controls="nav-upload" aria-selected="false">Uplaod</button>
                                     </div>
                                 </nav><!-- /nav -->
                                 <div class="tab-content" id="nav-tabContent">
-                                    <div class="tab-pane fade show active" id="nav-basic-information" role="tabpanel" aria-labelledby="nav-basic-information-tab" tabindex="0">
-                                        <div class="row mt-3">
-                                            <div class="col-md-6">
-                                                <div class="input-group">
-                                                    <span class="input-group-text" id="name">Name</span>
+                                    <!-- Basic Information -->
+                                    <div class="tab-pane fade show active" id="nav-basic" role="tabpanel" aria-labelledby="nav-basic-tab" tabindex="0">
+                                        <div class="row">
+
+                                            <div class="col-md-6 mt-3">
+                                                <div class="form-group d-flex">
+                                                    <label class="input-group-text">Name</label>
                                                     <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="name" />
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="input-group">
-                                                    <span class="input-group-text" id="email">E-Mail</span>
+
+                                            <div class="col-md-6 mt-3">
+                                                <div class="form-group d-flex">
+                                                    <span class="input-group-text">E-mail</span>
                                                     <input type="text" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="email" />
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="input-group">
-                                                    <span class="input-group-text" id="email">E-Mail</span>
-                                                    <input class="form-check-input mt-2" type="radio" name="gender" value="M" aria-label="Radio button for following text input">
-                                                    <input class="form-check-input mt-2" type="radio" name="gender" value="F" aria-label="Radio button for following text input">
+
+
+                                            <div class="col-md-6 mt-3">
+                                                <div class="form-group d-flex">
+                                                    <span class="input-group-text">Role</span>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option value="">--SELECT ROLE--</option>
+                                                        <option value="1">Super Admin</option>
+                                                        <option value="2">Admin</option>
+                                                        <option value="3">User</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div><!-- #/nav-basic-information-->
-                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
-                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
-                                    <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div>
+
+                                            <div class="col-md-6 mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">National ID</span>
+                                                    <input type="text" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="email" />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6 mt-3">
+                                                <div class="input-group">
+                                                    <label class=""><strong>Gender&nbsp;:&nbsp;</strong></label>
+                                                    <input class="form-check-input" type="radio" name="gender" value="M" aria-label="Radio button for following text input">Male&nbsp;&nbsp;
+                                                    <input class="form-check-input" type="radio" name="gender" value="F" aria-label="Radio button for following text input">&nbsp;&nbsp;Female
+                                                    <input class="form-check-input" type="radio" name="gender" value="O" aria-label="Radio button for following text input">&nbsp;&nbsp;Other
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mt-3">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control datepicker" placeholder="yy/mm/dd" aria-label="Date Of Birth" aria-describedby="date_of_birth" />
+                                                    <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div><!-- ./row -->
+                                    </div><!-- #/nav-basic-->
+                                    <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab" tabindex="0">
+                                        <div class="row">
+
+                                            <div class="col-md-6 mt-3">
+                                                <div class="input-group">
+                                                    <label class="input-group-text">Country</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option value="">--SELECT COUNTRY--</option>
+                                                        <option value="1">Bangladesh</option>
+                                                        <option value="2">India</option>
+                                                        <option value="3">Pakistan</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">Mobile No</span>
+                                                    <input type="text" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="email" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 mt-3">
+                                                <div class="form-group">
+                                                    <label class="form-label">Address</label>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div><!-- ./row -->
+                                    </div><!-- #/nav-address -->
+                                    <div class="tab-pane fade" id="nav-upload" role="tabpanel" aria-labelledby="nav-upload-tab" tabindex="0">
+                                        <div class="row">
+                                            <div class="col-md-6 mt-3">
+                                                <div class="form-group">
+                                                    <label class="form-label">Profile Picture</label>
+                                                    <input class="form-control"  type="file"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 mt-3">
+                                                <img src="https://www.energyfit.com.mk/wp-content/plugins/ap_background/images/default/default_1.png" class="img-thumbnail" alt="Profile Picture">
+                                            </div>
+                                        </div><!-- ./row -->
+
+
+                                    </div><!-- #/nav-upload -->
                                 </div><!-- ./tab-content -->
                             </div><!-- ./card-body -->
                             <div class="card-footer">
@@ -75,7 +154,7 @@
     @include('partials.scripts')
     <script type="text/javascript">
         $(document).ready(function() {
-
+            $('.datepicker').datepicker();
         }); // end -:- document ready
     </script>
 </body>
