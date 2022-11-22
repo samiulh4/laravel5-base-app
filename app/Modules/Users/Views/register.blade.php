@@ -12,6 +12,19 @@
     <!-- Jquery -->
     <script src="{{ asset('assets/plugins/jquery/jquery-3.6.0.min.js') }}"></script>
     @include('partials.styles')
+    <!-- Jquery Steps JS -->
+    <link href="{{ asset('assets/plugins/jquery-steps/css/normalize.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/jquery-steps/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/jquery-steps/css/jquery.steps.css') }}" rel="stylesheet">
+    <style>
+        .wizard > .content {
+
+            min-height: 250px!important;
+
+        }
+
+
+    </style>
 </head>
 
 <body id="page-top">
@@ -21,140 +34,88 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <form>
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="text-center">User From</h3>
-                            </div>
-                            <div class="card-body">
-                                <nav>
-                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <button class="nav-link active" id="nav-basic-tab" data-bs-toggle="tab" data-bs-target="#nav-basic" type="button" role="tab" aria-controls="nav-basic" aria-selected="true">Basic Information</button>
-                                        <button class="nav-link" id="nav-address-tab" data-bs-toggle="tab" data-bs-target="#nav-address" type="button" role="tab" aria-controls="nav-address" aria-selected="false">Address</button>
-                                        <button class="nav-link" id="nav-upload-tab" data-bs-toggle="tab" data-bs-target="#nav-upload" type="button" role="tab" aria-controls="nav-upload" aria-selected="false">Uplaod</button>
+                    <div id="wizard">
+                        <h2>General Information</h2>
+                        <fieldset>
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group d-flex">
+                                        <label class="input-group-text"><strong>Name</strong></label>
+                                        <input type="text" class="form-control" placeholder="Enter Name" name="name"/>
                                     </div>
-                                </nav><!-- /nav -->
-                                <div class="tab-content" id="nav-tabContent">
-                                    <!-- Basic Information -->
-                                    <div class="tab-pane fade show active" id="nav-basic" role="tabpanel" aria-labelledby="nav-basic-tab" tabindex="0">
-                                        <div class="row">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group d-flex">
+                                        <label class="input-group-text"><strong>E-mail</strong></label>
+                                        <input type="text" class="form-control" placeholder="Enter E-mail" name="email"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-4">
+                                    <div class="form-group d-flex">
+                                        <label class="input-group-text"><strong>Role</strong></label>
+                                        <select class="form-select">
+                                            <option value="">--Select Role--</option>
+                                            <option value="1">Super Admin</option>
+                                            <option value="2">Admin</option>
+                                            <option value="3">User</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                                            <div class="col-md-6 mt-3">
-                                                <div class="form-group d-flex">
-                                                    <label class="input-group-text">Name</label>
-                                                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="name" />
-                                                </div>
-                                            </div>
+                                <div class="col-md-6 mt-4">
+                                    <div class="form-group d-flex">
+                                        <span class="input-group-text"><strong>National ID</strong></span>
+                                        <input type="text" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="email" />
+                                    </div>
+                                </div>
 
-                                            <div class="col-md-6 mt-3">
-                                                <div class="form-group d-flex">
-                                                    <span class="input-group-text">E-mail</span>
-                                                    <input type="text" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="email" />
-                                                </div>
-                                            </div>
+                            </div><!-- ./row -->
+                        </fieldset>
+                        <!-- General Information -->
 
+                        <h2>Second Step</h2>
+                        <fieldset>
+                            <p>Donec mi sapien, hendrerit nec egestas a, rutrum vitae dolor. Nullam venenatis diam ac ligula elementum pellentesque.
+                                In lobortis sollicitudin felis non eleifend. Morbi tristique tellus est, sed tempor elit. Morbi varius, nulla quis condimentum
+                                dictum, nisi elit condimentum magna, nec venenatis urna quam in nisi. Integer hendrerit sapien a diam adipiscing consectetur.
+                                In euismod augue ullamcorper leo dignissim quis elementum arcu porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Vestibulum leo velit, blandit ac tempor nec, ultrices id diam. Donec metus lacus, rhoncus sagittis iaculis nec, malesuada a diam.
+                                Donec non pulvinar urna. Aliquam id velit lacus.</p>
+                        </fieldset>
 
-                                            <div class="col-md-6 mt-3">
-                                                <div class="form-group d-flex">
-                                                    <span class="input-group-text">Role</span>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option value="">--SELECT ROLE--</option>
-                                                        <option value="1">Super Admin</option>
-                                                        <option value="2">Admin</option>
-                                                        <option value="3">User</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                        <h2>Third Step</h2>
+                        <fieldset>
+                            <p>Morbi ornare tellus at elit ultrices id dignissim lorem elementum. Sed eget nisl at justo condimentum dapibus. Fusce eros justo,
+                                pellentesque non euismod ac, rutrum sed quam. Ut non mi tortor. Vestibulum eleifend varius ullamcorper. Aliquam erat volutpat.
+                                Donec diam massa, porta vel dictum sit amet, iaculis ac massa. Sed elementum dui commodo lectus sollicitudin in auctor mauris
+                                venenatis.</p>
+                        </fieldset>
 
-                                            <div class="col-md-6 mt-3">
-                                                <div class="input-group">
-                                                    <span class="input-group-text">National ID</span>
-                                                    <input type="text" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="email" />
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-6 mt-3">
-                                                <div class="input-group">
-                                                    <label class=""><strong>Gender&nbsp;:&nbsp;</strong></label>
-                                                    <input class="form-check-input" type="radio" name="gender" value="M" aria-label="Radio button for following text input">Male&nbsp;&nbsp;
-                                                    <input class="form-check-input" type="radio" name="gender" value="F" aria-label="Radio button for following text input">&nbsp;&nbsp;Female
-                                                    <input class="form-check-input" type="radio" name="gender" value="O" aria-label="Radio button for following text input">&nbsp;&nbsp;Other
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mt-3">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control datepicker" placeholder="yy/mm/dd" aria-label="Date Of Birth" aria-describedby="date_of_birth" />
-                                                    <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
-                                                </div>
-                                            </div>
-
-
-
-
-                                        </div><!-- ./row -->
-                                    </div><!-- #/nav-basic-->
-                                    <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab" tabindex="0">
-                                        <div class="row">
-
-                                            <div class="col-md-6 mt-3">
-                                                <div class="input-group">
-                                                    <label class="input-group-text">Country</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option value="">--SELECT COUNTRY--</option>
-                                                        <option value="1">Bangladesh</option>
-                                                        <option value="2">India</option>
-                                                        <option value="3">Pakistan</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6 mt-3">
-                                                <div class="input-group">
-                                                    <span class="input-group-text">Mobile No</span>
-                                                    <input type="text" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="email" />
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6 mt-3">
-                                                <div class="form-group">
-                                                    <label class="form-label">Address</label>
-                                                    <textarea class="form-control" rows="3"></textarea>
-                                                </div>
-                                            </div>
-
-                                        </div><!-- ./row -->
-                                    </div><!-- #/nav-address -->
-                                    <div class="tab-pane fade" id="nav-upload" role="tabpanel" aria-labelledby="nav-upload-tab" tabindex="0">
-                                        <div class="row">
-                                            <div class="col-md-6 mt-3">
-                                                <div class="form-group">
-                                                    <label class="form-label">Profile Picture</label>
-                                                    <input class="form-control"  type="file"/>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6 mt-3">
-                                                <img src="https://www.energyfit.com.mk/wp-content/plugins/ap_background/images/default/default_1.png" class="img-thumbnail" alt="Profile Picture">
-                                            </div>
-                                        </div><!-- ./row -->
-
-
-                                    </div><!-- #/nav-upload -->
-                                </div><!-- ./tab-content -->
-                            </div><!-- ./card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-md btn-primary float-end">Register</button>
-                            </div><!-- ./card-footer -->
-                        </div><!-- ./card -->
-                    </form><!-- /form -->
+                        <h2>Forth Step</h2>
+                        <fieldset>
+                            <p>Quisque at sem turpis, id sagittis diam. Suspendisse malesuada eros posuere mauris vehicula vulputate. Aliquam sed sem tortor.
+                                Quisque sed felis ut mauris feugiat iaculis nec ac lectus. Sed consequat vestibulum purus, imperdiet varius est pellentesque vitae.
+                                Suspendisse consequat cursus eros, vitae tempus enim euismod non. Nullam ut commodo tortor.</p>
+                        </fieldset>
+                    </div><!-- #/wizard -->
                 </div><!-- ./col (page) -->
             </div><!-- ./row(page) -->
         </div><!-- #/content-wrapper -->
     </div><!-- #/page-wrapper -->
     @include('partials.scripts')
+    <!-- Jquery Steps JS -->
+    <script src="{{ asset('assets/plugins/jquery-steps/js/modernizr-2.6.2.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-steps/js/jquery.cookie-1.3.1.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-steps/js/jquery.steps.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('.datepicker').datepicker();
+            $("#wizard").steps({
+                headerTag: "h2",
+                bodyTag: "fieldset",
+                transitionEffect: "slideLeft"
+            });
         }); // end -:- document ready
     </script>
 </body>
