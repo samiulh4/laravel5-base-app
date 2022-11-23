@@ -39,34 +39,30 @@
                         <fieldset>
                             <div class="row">
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 offset-4 mt-4">
+                                    <div class="form-group d-flex">
+                                        <label class="input-group-text"><strong>Role</strong></label>
+                                        <select class="form-select">
+                                            <option value="">--Select Role--</option>
+{{--                                            <option value="1">Super Admin</option>--}}
+{{--                                            <option value="2">Admin</option>--}}
+{{--                                            <option value="3">Super User</option>--}}
+{{--                                            <option value="4">Guest</option>--}}
+                                            <option value="5" selected>User</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 offset-4 mt-4">
                                     <div class="form-group d-flex">
                                         <label class="input-group-text"><strong>Name</strong></label>
                                         <input type="text" class="form-control" placeholder="Enter Name" name="name"/>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 offset-4 mt-4">
                                     <div class="form-group d-flex">
                                         <label class="input-group-text"><strong>E-mail</strong></label>
                                         <input type="text" class="form-control" placeholder="Enter E-mail" name="email"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mt-4">
-                                    <div class="form-group d-flex">
-                                        <label class="input-group-text"><strong>Role</strong></label>
-                                        <select class="form-select">
-                                            <option value="">--Select Role--</option>
-                                            <option value="1">Super Admin</option>
-                                            <option value="2">Admin</option>
-                                            <option value="3">User</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mt-4">
-                                    <div class="form-group d-flex">
-                                        <span class="input-group-text"><strong>National ID</strong></span>
-                                        <input type="text" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="email" />
                                     </div>
                                 </div>
 
@@ -74,29 +70,43 @@
                         </fieldset>
                         <!-- General Information -->
 
-                        <h2>Second Step</h2>
+                        <h2>Contact Information</h2>
                         <fieldset>
-                            <p>Donec mi sapien, hendrerit nec egestas a, rutrum vitae dolor. Nullam venenatis diam ac ligula elementum pellentesque.
-                                In lobortis sollicitudin felis non eleifend. Morbi tristique tellus est, sed tempor elit. Morbi varius, nulla quis condimentum
-                                dictum, nisi elit condimentum magna, nec venenatis urna quam in nisi. Integer hendrerit sapien a diam adipiscing consectetur.
-                                In euismod augue ullamcorper leo dignissim quis elementum arcu porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Vestibulum leo velit, blandit ac tempor nec, ultrices id diam. Donec metus lacus, rhoncus sagittis iaculis nec, malesuada a diam.
-                                Donec non pulvinar urna. Aliquam id velit lacus.</p>
+                            <div class="row">
+                                <div class="col-md-6 offset-4 mt-4">
+                                    <div class="form-group d-flex">
+                                        <label class="input-group-text"><strong>Country</strong></label>
+                                        <select class="form-select">
+                                            <option value="">--Select Country--</option>
+                                            <option value="BD">Bangladesh</option>
+                                            <option value="PK">Pakistan</option>
+                                            <option value="IN">India</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 offset-4 mt-4">
+                                    <div class="form-group d-flex">
+                                        <label class="input-group-text"><strong>Name</strong></label>
+                                        <input type="text" class="form-control" placeholder="Enter Name" name="name"/>
+                                    </div>
+                                </div>
+                            </div>
                         </fieldset>
 
-                        <h2>Third Step</h2>
+                        <h2>Uplaod Information</h2>
                         <fieldset>
-                            <p>Morbi ornare tellus at elit ultrices id dignissim lorem elementum. Sed eget nisl at justo condimentum dapibus. Fusce eros justo,
-                                pellentesque non euismod ac, rutrum sed quam. Ut non mi tortor. Vestibulum eleifend varius ullamcorper. Aliquam erat volutpat.
-                                Donec diam massa, porta vel dictum sit amet, iaculis ac massa. Sed elementum dui commodo lectus sollicitudin in auctor mauris
-                                venenatis.</p>
-                        </fieldset>
-
-                        <h2>Forth Step</h2>
-                        <fieldset>
-                            <p>Quisque at sem turpis, id sagittis diam. Suspendisse malesuada eros posuere mauris vehicula vulputate. Aliquam sed sem tortor.
-                                Quisque sed felis ut mauris feugiat iaculis nec ac lectus. Sed consequat vestibulum purus, imperdiet varius est pellentesque vitae.
-                                Suspendisse consequat cursus eros, vitae tempus enim euismod non. Nullam ut commodo tortor.</p>
+                            <div class="row">
+                                <div class="col-md-6 mt-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Profile Picture</label>
+                                        <input class="form-control js-upload-image"  type="file" name="picture" onchange="jsPreviewUploadedImage(this,'preview_picture')"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-3">
+                                    <img src="{{ asset('assets/img/default.png') }}"
+                                         class="img-thumbnail" alt="Profile Picture" width="200" height="200" id="preview_picture"/>
+                                </div>
+                            </div>
                         </fieldset>
                     </div><!-- #/wizard -->
                 </div><!-- ./col (page) -->
@@ -116,7 +126,31 @@
                 bodyTag: "fieldset",
                 transitionEffect: "slideLeft"
             });
+            // $('.js-upload-image').change(function(e){
+            //     e.preventDefault();
+            //
+            // });
         }); // end -:- document ready
+        function jsPreviewUploadedImage(img_data, img_preview_id)
+        {
+            let img_preview_old_src = document.getElementById(img_preview_id).src;
+            let file = img_data.files[0];
+            let file_type = file.type;
+            let ext_list = ["image/jpeg","image/png","image/jpg"];
+            let reader = new FileReader();
+            if(!((file_type==ext_list[0]) || (file_type==ext_list[1]) || (file_type==ext_list[2]))){
+                alert('File must be jpeg/jpg/png !');
+                reader.onload = function(e){
+                    //$('#'+img_preview_id).attr('src', img_preview_old_src);
+                    document.getElementById(img_preview_id).src = img_preview_old_src;
+                };
+            }else{
+                reader.onload = function(e){
+                    $('#'+img_preview_id).attr('src', e.target.result);
+                };
+            }
+            reader.readAsDataURL(file);
+        }// end -:- jsPreviewUploadedImage()
     </script>
 </body>
 
