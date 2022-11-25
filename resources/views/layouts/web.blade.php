@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Laravel5 BAT App | Web')</title>
+    <title>@yield('title', 'Laravel5 Base App | Web')</title>
     <!-- Jquery -->
     <script src="{{ asset('assets/plugins/jquery/jquery-3.6.0.min.js') }}"></script>
     @include('partials.styles')
@@ -18,6 +18,7 @@
 <body id="page-top">
 <div id="page-wrapper">
     @include('partials.web.nav')
+    @include('partials.messages')
     <div class="container-fluid" id="content-wrapper">
         @yield('content')
     </div><!-- ./content-wrapper -->
