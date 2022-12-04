@@ -1,0 +1,21 @@
+composer require laravel/ui
+npm cache clean --force
+npm i --ignore-script
+-- npm install
+npm install vue
+npm install vue-template-compiler vue-loader vue-router vuex axios vue-axios  --save-dev --legacy-peer-deps
+npm uninstall node-sass && npm install node-sass --ignore-script
+npm audit fix --force
+npm run dev
+
+
+In my situation problem was in the version of node. As I used the newest version 16.0.0 but the version of node-sass was old (4.14.1), I downgraded node to 14.15.5 (nvm install 14.15.5), ran npm install node-sass@4.14.1, rebuilt node npm rebuild node-sass and just then started my app npm start. Worked!
+
+Steps:
+
+nvm install 14.15.5 (downgrade node to version that satisfies node-sass)
+nvm use 14.15.5
+npm install node-sass@4.14.1 (reinstall node-sass)
+npm rebuild node-sass
+npm start
+

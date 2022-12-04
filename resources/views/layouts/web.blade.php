@@ -19,7 +19,7 @@
 <div id="page-wrapper">
     @include('partials.web.nav')
     @include('partials.messages')
-    <div class="container-fluid" id="content-wrapper">
+    <div id="content-wrapper">
         @yield('content')
     </div><!-- ./content-wrapper -->
     @include('partials.web.footer')

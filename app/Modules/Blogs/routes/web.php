@@ -1,7 +1,7 @@
 <?php
 
-Route::group(['module' => 'Blogs', 'middleware' => ['web'], 'namespace' => 'App\Modules\Blogs\Controllers'], function() {
+Route::group(['module' => 'Blogs', 'middleware' => ['web'], 'prefix' => 'blog', 'namespace' => 'App\Modules\Blogs\Controllers'], function() {
 
-    Route::resource('blogs', 'BlogsController');
+    Route::get('index', 'BlogController@index')->name('blog.index');
 
 });
